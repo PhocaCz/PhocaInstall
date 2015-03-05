@@ -1,0 +1,1 @@
+Phoca Install is Joomla! CMS extension. Component which is used for installing different features in Joomla!.
