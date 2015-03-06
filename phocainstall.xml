@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension method="upgrade" type="component" version="3">
+	<name>com_phocainstall</name>
+	<author>Jan Pavelka (www.phoca.cz)</author>
+	<creationDate>28/03/2013</creationDate>
+	<authorEmail></authorEmail>
+	<authorUrl>www.phoca.cz</authorUrl>
+	<copyright>Jan Pavelka</copyright>
+	<license>GNU/GPL</license>
+	<version>3.0.0</version>
+	<description>Phoca Install</description>
+	<scriptfile>install/script.php</scriptfile>
+
+		<!-- || 1 || INSTRUCTIONS - Write your instructions here -->
+	<pinstructions><![CDATA[<h1>Instructions</h1><p>Write Instructions here</p>]]></pinstructions>
+	<!-- || 1 || END INSTRUCTIONS -->
+	
+	<!-- || 2 || SQL QUERY Write your SQL queries here -->
+	<psql><![CDATA[SELECT title FROM #__content WHERE id = 1]]></psql>
+	<!-- || 2 || END SQL QUERY -->
+	
+	<!-- || 3 || FILES - Write your files here (file TAG) - such files will be copied
+				from "installfiles" folder to destination written
+				after the "installfiles" folder e.g.
+				FROM:
+				installfiles/administrator/com_phocainstall/test.txt
+				TO:
+				administrator/com_phocainstall/test.txt
+			 
+				Files needs to be included in ZIP package in "installfiles" folder
+			 
+				Or write only a name of folder (folder TAG) - all files from this folder will be copied, e.g.:
+				<folder>administrator</folder>
+				This folder must be included in "installfiles" folder
+	-->
+	<pfiles>
+		<folder>administrator</folder>
+		<filename>administrator/components/com_phocainstall/test.txt</filename>
+	</pfiles>
+	<!-- || 3 || END FILES -->
+	
+	
+	<update>
+		<schemas/>
+	</update>
+
+	<media destination="com_phocainstall" folder="media">
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>images</folder>
+	</media>
+
+	<languages>
+		<language tag="en-GB" client="site">language/en-GB/en-GB.com_phocainstall.ini</language>
+		<language tag="en-GB" client="site">language/en-GB/en-GB.com_phocainstall.sys.ini</language>
+	</languages>
+
+	<administration>
+		<menu img="media/com_phocainstall/images/administrator/icon-16-pi-menu.png" link="option=com_phocainstall">COM_PHOCAINSTALL</menu>
+		<files folder="admin">
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>phocainstall.php</filename>
+			<filename>phocainstall.xml</filename>
+			<folder>controllers</folder>
+			<folder>help</folder>
+			<folder>helpers</folder>
+			<folder>install</folder>
+			<folder>installfiles</folder>
+			<folder>views</folder>
+		</files>
+
+		<languages>
+			<language tag="en-GB">language/en-GB/en-GB.com_phocainstall.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_phocainstall.sys.ini</language>
+		</languages>
+
+	</administration>
+</extension>
